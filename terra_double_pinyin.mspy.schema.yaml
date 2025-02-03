@@ -4,7 +4,7 @@
 schema:
   schema_id: terra_double_pinyin.mspy
   name: MSPY雙拼聲調三鍵
-  version: "0.03"
+  version: "0.04"
   author:
     - 佛振 <chen.sst@gmail.com>
     - Kobe Arthur Scofield

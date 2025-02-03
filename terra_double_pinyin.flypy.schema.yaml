@@ -4,7 +4,7 @@
 schema:
   schema_id: terra_double_pinyin.flypy
   name: 小鶴雙拼聲調三鍵
-  version: "0.03"
+  version: "0.04"
   author:
     - double pinyin layout by 鶴
     - Rime schema by 佛振 <chen.sst@gmail.com>
