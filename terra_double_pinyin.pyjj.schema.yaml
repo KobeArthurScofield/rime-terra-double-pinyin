@@ -4,7 +4,7 @@
 schema:
   schema_id: terra_double_pinyin.pyjj
   name: 拼音加加雙拼聲調三鍵
-  version: "0.02"
+  version: "0.03"
   author:
     - 佛振 <chen.sst@gmail.com>
     - Ye Zhou
@@ -16,7 +16,15 @@ schema:
     - stroke
 
 switches:
-  __include: terra_double_pinyin.share.yaml:/switches
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: simplification
+    states: [ 漢字, 汉字 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
 
 engine:
   __include: terra_double_pinyin.share.yaml:/engines
@@ -68,7 +76,7 @@ translator:
   prism: terra_double_pinyin.pyjj
   preedit_format:
     __include: /unique_preedit/main
-    __patch: terra_double_pinyin.share.yaml:/preedit_fmt/main/+
+    __append: terra_double_pinyin.share.yaml:/preedit_fmt/main
 
 punctuator:
   __include: terra_double_pinyin.share.yaml:/punctuator
