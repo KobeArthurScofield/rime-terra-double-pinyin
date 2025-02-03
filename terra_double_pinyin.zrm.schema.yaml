@@ -74,29 +74,6 @@ translator:
   __include: terra_double_pinyin.share.yaml:/translator
   prism: terra_double_pinyin.zrm
   preedit_format:
-    __include: /unique_preedit/main
-    __append: terra_double_pinyin.share.yaml:/preedit_fmt/main
-
-punctuator:
-  __include: terra_double_pinyin.share.yaml:/punctuator
-
-key_binder:
-  __include: terra_double_pinyin.share.yaml:/key_binder
-
-recognizer:
-  __include: terra_double_pinyin.share.yaml:/recognizer
-
-stroke:
-  __include: terra_double_pinyin.share.yaml:/stroke?
-
-double_pinyin_reverse_lookup:
-  __include: terra_double_pinyin.share.yaml:/double_pinyin_reverse_lookup?
-
-menu:
-  __include: terra_double_pinyin.share.yaml:/menu
-
-unique_preedit:
-  main:
     - xform/([bpmnljqxy])n/$1in/
     - xform/(\w)g/$1eng/
     - xform/(\w)q/$1iu/
@@ -127,4 +104,54 @@ unique_preedit:
     - "xform/(^|[ '])v/$1zh/"
     - "xform/(^|[ '])i/$1ch/"
     - "xform/(^|[ '])u/$1sh/"
+    - xlit/67890/12345/
+    - xform/0(\w)/$1/
+    - xform/([nl])v/$1ü/
+    - xform/([jqxy])v/$1u/
+    - xform/([nl])ue/$1üe/
+    - xform/([nl])üen/$1uen/
+    - xform/eh/ê/
+    - 'xform ([aeiou])(ng?|r)([-;/<,>\\]) $1$3$2'
+    - 'xform ([aeo])([iuo])([-;/<,>\\]) $1$3$2'
+    - 'xform a[-;] ā'
+    - 'xform a/ á'
+    - 'xform a[<,] ǎ'
+    - 'xform a[>\\] à'
+    - 'xform e[-;] ē'
+    - 'xform e/ é'
+    - 'xform e[<,] ě'
+    - 'xform e[>\\] è'
+    - 'xform o[-;] ō'
+    - 'xform o/ ó'
+    - 'xform o[<,] ǒ'
+    - 'xform o[>\\] ò'
+    - 'xform i[-;] ī'
+    - 'xform i/ í'
+    - 'xform i[<,] ǐ'
+    - 'xform i[>\\] ì'
+    - 'xform u[-;] ū'
+    - 'xform u/ ú'
+    - 'xform u[<,] ǔ'
+    - 'xform u[>\\] ù'
+    - 'xform ü[-;] ǖ'
+    - 'xform ü/ ǘ'
+    - 'xform ü[<,] ǚ'
+    - 'xform ü[>\\] ǜ'
 
+punctuator:
+  __include: terra_double_pinyin.share.yaml:/punctuator
+
+key_binder:
+  __include: terra_double_pinyin.share.yaml:/key_binder
+
+recognizer:
+  __include: terra_double_pinyin.share.yaml:/recognizer
+
+stroke:
+  __include: terra_double_pinyin.share.yaml:/stroke?
+
+double_pinyin_reverse_lookup:
+  __include: terra_double_pinyin.share.yaml:/double_pinyin_reverse_lookup?
+
+menu:
+  __include: terra_double_pinyin.share.yaml:/menu
