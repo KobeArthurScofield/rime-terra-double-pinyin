@@ -16,15 +16,7 @@ schema:
     - stroke
 
 switches:
-  - name: ascii_mode
-    reset: 0
-    states: [ 中文, 西文 ]
-  - name: full_shape
-    states: [ 半角, 全角 ]
-  - name: simplification
-    states: [ 漢字, 汉字 ]
-  - name: ascii_punct
-    states: [ 。，, ．， ]
+  __include: longma_tone.share.yaml:/switches
 
 engine:
   __include: terra_double_pinyin.share.yaml:/engines
@@ -152,8 +144,23 @@ key_binder:
 recognizer:
   __include: terra_double_pinyin.share.yaml:/recognizer
 
+zh_trad:
+  __include: longma_tone.share.yaml:/trad_simp_convert/zh_trad
+
+zh_tw:
+  __include: longma_tone.share.yaml:/trad_simp_convert/zh_tw
+
+zh_hk:
+  __include: longma_tone.share.yaml:/trad_simp_convert/zh_hk
+
+zh_simp:
+  __include: longma_tone.share.yaml:/trad_simp_convert/zh_simp
+
+zh_cn:
+  __include: longma_tone.share.yaml:/trad_simp_convert/zh_cn
+
 stroke:
-  __include: terra_double_pinyin.share.yaml:/stroke?
+  __include: terra_double_pinyin.share.yaml:/reverse_library/stroke?
 
 double_pinyin_reverse_lookup:
   __include: terra_double_pinyin.share.yaml:/double_pinyin_reverse_lookup?
