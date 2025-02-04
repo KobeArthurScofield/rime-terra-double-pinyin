@@ -4,7 +4,7 @@
 schema:
   schema_id: terra_double_pinyin.pyjj
   name: 拼音加加雙拼聲調三鍵
-  version: "0.06"
+  version: "0.07"
   author:
     - 佛振 <chen.sst@gmail.com>
     - Ye Zhou
@@ -108,6 +108,7 @@ translator:
     - xform/([jqxy])v/$1u/
     - xform/([nl])ue/$1üe/
     - xform/([nl])üen/$1uen/
+    - xform/5/·/
     - xform/eh[0-5]?/ê/
     - 'xform ([aeiou])(ng?|r)([12345]) $1$3$2'
     - 'xform ([aeo])([iuo])([12345]) $1$3$2'

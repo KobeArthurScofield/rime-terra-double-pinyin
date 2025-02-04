@@ -4,7 +4,7 @@
 schema:
   schema_id: terra_double_pinyin.abc
   name: 智能ABC雙拼聲調三鍵
-  version: "0.06"
+  version: "0.07"
   author:
     - 佛振 <chen.sst@gmail.com>
     - Kobe Arthur Scofield
@@ -101,6 +101,7 @@ translator:
     - xform/([jqxy])v/$1u/
     - xform/([nl])ue/$1üe/
     - xform/([nl])üen/$1uen/
+    - xform/5/·/
     - xform/eh[0-5]?/ê/
     - 'xform ([aeiou])(ng?|r)([12345]) $1$3$2'
     - 'xform ([aeo])([iuo])([12345]) $1$3$2'
@@ -128,7 +129,7 @@ translator:
     - 'xform ü2 ǘ'
     - 'xform ü3 ǚ'
     - 'xform ü4 ǜ'
-    - xform/5/·/
+    - xform/[0-5]//
 
 punctuator:
   __include: terra_double_pinyin.share.yaml:/punctuator
