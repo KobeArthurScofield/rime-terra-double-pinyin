@@ -1,0 +1,12 @@
+# encoding: utf-8
+---
+recipe:
+  Rx: rime-longma-tone
+  description: >-
+    地球雙拼聲調三鍵輸入法
+
+install_files: >-
+  essay.txt
+  terra_double_pinyin.share.yaml
+  terra_double_pinyin.*.schema.yaml
+  zh-hant-t-essay-bg*.gram
