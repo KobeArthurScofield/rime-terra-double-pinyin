@@ -109,7 +109,7 @@ translator:
     - xform/([jqxy])v/$1u/
     - xform/([nl])ue/$1üe/
     - xform/([nl])üen/$1uen/
-    - xform/eh/ê/
+    - xform/eh[0-5]?/ê/
     - 'xform ([aeiou])(ng?|r)([12345]) $1$3$2'
     - 'xform ([aeo])([iuo])([12345]) $1$3$2'
     - 'xform a1 ā'
@@ -135,6 +135,8 @@ translator:
     - 'xform ü1 ǖ'
     - 'xform ü2 ǘ'
     - 'xform ü3 ǚ'
+    - 'xform ü4 ǜ'
+    - xform/[0-5]//
 
 punctuator:
   __include: terra_double_pinyin.share.yaml:/punctuator
