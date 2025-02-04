@@ -4,7 +4,7 @@
 schema:
   schema_id: terra_double_pinyin.mspy
   name: MSPY雙拼聲調三鍵
-  version: "0.05"
+  version: "0.06"
   author:
     - 佛振 <chen.sst@gmail.com>
     - Kobe Arthur Scofield
@@ -158,6 +158,9 @@ stroke:
 
 double_pinyin_reverse_lookup:
   __include: terra_double_pinyin.share.yaml:/double_pinyin_reverse_lookup?
+
+grammar:
+  __include: terra_double_pinyin.share.yaml:/grammar
 
 menu:
   __include: terra_double_pinyin.share.yaml:/menu

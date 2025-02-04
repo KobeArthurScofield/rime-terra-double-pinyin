@@ -33,9 +33,12 @@ translator:
   enable_sentence: true
   enable_user_dict: true
   dictionary: terra_pinyin
+  db_class: userdb
   spelling_hints: 8
   always_show_comments: true
   contextual_suggestions: true
+  max_homophones: 7
+  max_homographs: 7
   comment_format:
     __include: /comment_fmt/main
 
@@ -65,6 +68,9 @@ double_pinyin_reverse_lookup:
   dictionary: terra_pinyin
   comment_format:
     __include: /comment_fmt/main
+
+grammar:
+  language: zh-hant-t-essay-bgw
 
 menu:
   page_size: 9
