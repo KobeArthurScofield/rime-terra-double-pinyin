@@ -1,10 +1,16 @@
 # Rime schema
 # encoding: utf-8
 
+preedit_2ndconvert:
+  __include: terra_double_pinyin.share.yaml:/preedit_fmt
+
+preedit_1stconvert:
+  __include: /preconvert
+
 schema:
   schema_id: terra_double_pinyin.flypy
   name: 小鶴雙拼聲調三鍵
-  version: "0.07"
+  version: "0.08"
   author:
     - double pinyin layout by 鶴
     - Rime schema by 佛振 <chen.sst@gmail.com>
@@ -16,7 +22,7 @@ schema:
     - stroke
 
 switches:
-  __include: longma_tone.share.yaml:/switches
+  __include: terra_double_pinyin.share.yaml:/switches
 
 engine:
   __include: terra_double_pinyin.share.yaml:/engines
@@ -67,6 +73,48 @@ translator:
   __include: terra_double_pinyin.share.yaml:/translator
   prism: terra_double_pinyin.flypy
   preedit_format:
+    __patch:
+      - preedit_1stconvert
+      - preedit_2ndconvert
+
+punctuator:
+  __include: terra_double_pinyin.share.yaml:/punctuator
+
+key_binder:
+  __include: terra_double_pinyin.share.yaml:/key_binder
+
+recognizer:
+  __include: terra_double_pinyin.share.yaml:/recognizer
+
+zh_trad:
+  __include: terra_double_pinyin.share.yaml:/trad_simp_convert/zh_trad
+
+zh_tw:
+  __include: terra_double_pinyin.share.yaml:/trad_simp_convert/zh_tw
+
+zh_hk:
+  __include: terra_double_pinyin.share.yaml:/trad_simp_convert/zh_hk
+
+zh_simp:
+  __include: terra_double_pinyin.share.yaml:/trad_simp_convert/zh_simp
+
+zh_cn:
+  __include: terra_double_pinyin.share.yaml:/trad_simp_convert/zh_cn
+
+stroke:
+  __include: terra_double_pinyin.share.yaml:/reverse_library/stroke?
+
+double_pinyin_reverse_lookup:
+  __include: terra_double_pinyin.share.yaml:/double_pinyin_reverse_lookup?
+
+grammar:
+  __include: terra_double_pinyin.share.yaml:/grammar
+
+menu:
+  __include: terra_double_pinyin.share.yaml:/menu
+
+preconvert:
+  __append:
     - xform/([bpmfdtnljqx])n/$1iao/
     - xform/(\w)g/$1eng/
     - xform/(\w)q/$1iu/
@@ -97,74 +145,3 @@ translator:
     - "xform/(^|[ '])v/$1zh/"
     - "xform/(^|[ '])i/$1ch/"
     - "xform/(^|[ '])u/$1sh/"
-    - xlit/67890/12345/
-    - xform/0(\w)/$1/
-    - xform/([nl])v/$1ü/
-    - xform/([jqxy])v/$1u/
-    - xform/([nl])ue/$1üe/
-    - xform/([nl])üen/$1uen/
-    - xform/5/·/
-    - xform/eh[0-5]?/ê/
-    - 'xform ([aeiou])(ng?|r)([12345]) $1$3$2'
-    - 'xform ([aeo])([iuo])([12345]) $1$3$2'
-    - 'xform a1 ā'
-    - 'xform a2 á'
-    - 'xform a3 ǎ'
-    - 'xform a4 à'
-    - 'xform e1 ē'
-    - 'xform e2 é'
-    - 'xform e3 ě'
-    - 'xform e4 è'
-    - 'xform o1 ō'
-    - 'xform o2 ó'
-    - 'xform o3 ǒ'
-    - 'xform o4 ò'
-    - 'xform i1 ī'
-    - 'xform i2 í'
-    - 'xform i3 ǐ'
-    - 'xform i4 ì'
-    - 'xform u1 ū'
-    - 'xform u2 ú'
-    - 'xform u3 ǔ'
-    - 'xform u4 ù'
-    - 'xform ü1 ǖ'
-    - 'xform ü2 ǘ'
-    - 'xform ü3 ǚ'
-    - 'xform ü4 ǜ'
-    - xform/[0-5]//
-
-punctuator:
-  __include: terra_double_pinyin.share.yaml:/punctuator
-
-key_binder:
-  __include: terra_double_pinyin.share.yaml:/key_binder
-
-recognizer:
-  __include: terra_double_pinyin.share.yaml:/recognizer
-
-zh_trad:
-  __include: longma_tone.share.yaml:/trad_simp_convert/zh_trad
-
-zh_tw:
-  __include: longma_tone.share.yaml:/trad_simp_convert/zh_tw
-
-zh_hk:
-  __include: longma_tone.share.yaml:/trad_simp_convert/zh_hk
-
-zh_simp:
-  __include: longma_tone.share.yaml:/trad_simp_convert/zh_simp
-
-zh_cn:
-  __include: longma_tone.share.yaml:/trad_simp_convert/zh_cn
-
-stroke:
-  __include: terra_double_pinyin.share.yaml:/reverse_library/stroke?
-
-double_pinyin_reverse_lookup:
-  __include: terra_double_pinyin.share.yaml:/double_pinyin_reverse_lookup?
-
-grammar:
-  __include: terra_double_pinyin.share.yaml:/grammar
-
-menu:
-  __include: terra_double_pinyin.share.yaml:/menu
