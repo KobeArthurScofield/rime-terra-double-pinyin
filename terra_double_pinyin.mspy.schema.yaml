@@ -22,11 +22,10 @@ engine:
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcba;67890
-  initials: zyxwvutsrqponmlkjihgfedcba
+  initials: zyxwvutsrqponmlkjihgfdcb
   finals: '67890'
   delimiter: " '"
   algebra:
-    - erase/^xx$/
     - derive/^([jqxy])u([12345])$/$1v$2/
     - derive/^([aoe].*)$/o$1/
     - xform/^([ae])(.*)$/$1$1$2/
@@ -64,7 +63,6 @@ speller:
     - xform/5/0/
     - xlit/QWRTYUIOPSDFGHMJCKLZXVBN/qwrtyuiopsdfghmjcklzxvbn/
     - abbrev/^(.)(.).+$/$1$2/
-    - abbrev/^(.).+$/$1/
 
 translator:
   __include: terra_double_pinyin.share.yaml:/translator
