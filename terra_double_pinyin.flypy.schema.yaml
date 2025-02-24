@@ -55,7 +55,8 @@ speller:
     - xform/(.)ao([1-5])$/$1C$2/
     - xform/ui([1-5])$/V$1/
     - xform/in([1-5])$/B$1/
-    - xlit/QWERTYOPASDFGHJKLZXCVBNM12345/qwertyopasdfghjklzxcvbnm67890/
+    - xlit/QWRTYUIOPSDFGHJKLZXCVBNM/qwrtyuiopsdfghjklzxcvbnm/
+    - xlit/12345/67890/
     - abbrev/^(.)(.).+$/$1$2/
 
 translator:
