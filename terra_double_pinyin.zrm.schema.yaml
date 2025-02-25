@@ -28,6 +28,7 @@ speller:
   algebra:
     - derive/^([jqxy])u([1-5])$/$1v$2/
     - derive/^([aoe])([ioun])([1-5])$/$1$1$2$3/
+    - derive/eh([1-5])$/e$1/
     - xform/^([aoe])(ng)?([1-5])$/$1$1$2$3/
     - xform/iu([1-5])$/Q$1/
     - xform/[iu]a([1-5])$/W$1/

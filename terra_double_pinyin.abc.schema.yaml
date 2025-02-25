@@ -27,6 +27,7 @@ speller:
   delimiter: " '"
   algebra:
     - derive/^([jqxy])u$([1-5])/$1v$2/
+    - derive/eh([1-5])$/e$1/
     - xform/^zh/A/
     - xform/^ch/E/
     - xform/^sh/V/
