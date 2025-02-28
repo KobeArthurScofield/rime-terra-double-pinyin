@@ -1,7 +1,7 @@
 # encoding: utf-8
 ---
 recipe:
-  Rx: rime-longma-tone
+  Rx: rime-terra-double-pinyin
   description: >-
     地球雙拼聲調三鍵輸入法
 
